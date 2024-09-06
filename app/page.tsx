@@ -213,7 +213,7 @@ export default function Home() {
                         </p>
                         <p className="text-xl font-bold text-orange-600">
                           {result.pensionContribution.toFixed(2)} Br
-                          <span className="ml-2 text-2xl">🙄</span>
+                          <span className="ml-2 text-2xl">🙄😏🫤</span>
                         </p>
                       </div>
                     </div>

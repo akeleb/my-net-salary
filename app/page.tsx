@@ -237,6 +237,7 @@ export default function Home() {
                         alt="Not fair"
                         layout="fill"
                         className="absolute"
+                        unoptimized
                       />
                     </div>
                     <p className="text-black">This is not fair🥹</p>

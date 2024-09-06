@@ -189,7 +189,7 @@ export default function Home() {
                         </p>
                         <p className="text-xl font-bold text-green-600">
                           {result.grossSalary.toFixed(2)} Br
-                          <span className="ml-2 text-2xl">🎉🤣😂</span>
+                          <span className="ml-2 text-2xl">😂</span>
                         </p>
                       </div>
                     </div>
@@ -201,7 +201,7 @@ export default function Home() {
                         </p>
                         <p className="text-xl font-bold text-red-600">
                           {result.incomeTax.toFixed(2)} Br
-                          <span className="ml-2 text-2xl">🤒😠😱</span>
+                          <span className="ml-2 text-2xl">🤒</span>
                         </p>
                       </div>
                     </div>
@@ -213,7 +213,7 @@ export default function Home() {
                         </p>
                         <p className="text-xl font-bold text-orange-600">
                           {result.pensionContribution.toFixed(2)} Br
-                          <span className="ml-2 text-2xl">🙄😏🫤</span>
+                          <span className="ml-2 text-2xl">🥹</span>
                         </p>
                       </div>
                     </div>
@@ -225,7 +225,7 @@ export default function Home() {
                         </p>
                         <p className="text-xl font-bold text-blue-600">
                           {result.netSalary.toFixed(2)} Br
-                          <span className="ml-2 text-2xl">🥹😭</span>
+                          <span className="ml-2 text-2xl">😭</span>
                         </p>
                       </div>
                     </div>

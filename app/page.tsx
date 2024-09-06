@@ -233,8 +233,8 @@ export default function Home() {
                   <div>
                     <div className="relative w-full pb-[65%]">
                       <Image
-                        src="/giphy.webp"
-                        alt="Local GIF"
+                        src="/static/img/giphy.webp"
+                        alt="Not fair"
                         layout="fill"
                         className="absolute"
                       />

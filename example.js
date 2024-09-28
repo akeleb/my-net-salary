@@ -1,5 +1,5 @@
 const example = () => {
-  return <div>example modification in main branch</div>;
+  return <div>This line modified in dev branch</div>;
 };
 
 export default example;

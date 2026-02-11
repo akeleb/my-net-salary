@@ -7,6 +7,7 @@ import Image from "next/image";
 interface TaxBracket {
   max: number;
   rate: number;
+  deduction: number;
 }
 
 interface SalaryResult {
@@ -22,13 +23,12 @@ export default function Home() {
   const [result, setResult] = useState<SalaryResult | null>(null);
 
   const taxBrackets: TaxBracket[] = [
-    { max: 600, rate: 0 },
-    { max: 1650, rate: 0.1 },
-    { max: 3200, rate: 0.15 },
-    { max: 5250, rate: 0.2 },
-    { max: 7800, rate: 0.25 },
-    { max: 10900, rate: 0.3 },
-    { max: Infinity, rate: 0.35 },
+    { max: 2000, rate: 0, deduction: 0 },
+    { max: 4000, rate: 0.15, deduction: 300 },
+    { max: 7000, rate: 0.20, deduction: 500 },
+    { max: 10000, rate: 0.25, deduction: 850 },
+    { max: 14000, rate: 0.30, deduction: 1350 },
+    { max: Infinity, rate: 0.35, deduction: 2050 },
   ];
 
   const employeePensionRate: number = 0.07;
@@ -77,25 +77,16 @@ export default function Home() {
   };
 
   const calculateTaxAndPension = (salary: number): SalaryResult => {
-    const taxableIncome = salary;
     let tax = 0;
-    let remainingIncome = taxableIncome;
 
     for (const bracket of taxBrackets) {
-      if (remainingIncome > 0) {
-        const taxableAmount = Math.min(
-          remainingIncome,
-          bracket.max -
-            (bracket === taxBrackets[0]
-              ? 0
-              : taxBrackets[taxBrackets.indexOf(bracket) - 1].max)
-        );
-        tax += taxableAmount * bracket.rate;
-        remainingIncome -= taxableAmount;
-      } else {
+      if (salary <= bracket.max) {
+        tax = salary * bracket.rate - bracket.deduction;
         break;
       }
     }
+
+    if (tax < 0) tax = 0;
 
     const pensionContribution = salary * employeePensionRate;
     const netSalary = salary - tax - pensionContribution;

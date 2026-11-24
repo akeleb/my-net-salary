@@ -22,6 +22,9 @@ export default function Home() {
   const [netSalary, setNetSalary] = useState<string>("");
   const [result, setResult] = useState<SalaryResult | null>(null);
 
+  // Monthly employment income tax, Income Tax (Amendment) Proclamation
+  // No. 1395/2025 (effective July 2025). Tax = salary * rate - deduction.
+  // Pension is withheld separately and does not reduce taxable income.
   const taxBrackets: TaxBracket[] = [
     { max: 2000, rate: 0, deduction: 0 },
     { max: 4000, rate: 0.15, deduction: 300 },
@@ -111,7 +114,7 @@ export default function Home() {
       </Head>
 
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-400 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-cyan-400 to-sky-400 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
           <div className="max-w-md mx-auto">
             <div>
@@ -226,7 +229,7 @@ export default function Home() {
                       <Image
                         src="/static/img/giphy.webp"
                         alt="Not fair"
-                        layout="fill"
+                        fill
                         className="absolute"
                         unoptimized
                       />
